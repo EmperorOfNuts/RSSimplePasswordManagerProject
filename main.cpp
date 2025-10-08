@@ -7,9 +7,7 @@
 
 int main() {
 
-    std::string test = "ABCDEFG";
-    std::string symbols = "`~!@#$%^&*()_+-=.,?";
-    password testPassword(test);
+    password testPassword;
     testPassword.generateNewPassword();
     std::cout << testPassword.currentPassword;
 
