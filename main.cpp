@@ -1,5 +1,5 @@
-#include "passwordManagement.hpp"
-#include "passwordManagement.cpp"
+#include "login.hpp"
+#include "login.cpp"
 #include <string>
 #include <iostream>
 #include <typeinfo>
@@ -7,8 +7,7 @@
 
 int main() {
 
-    password testPassword;
-    testPassword.generateNewPassword();
-    std::cout << testPassword.currentPassword;
+    login testLogin;
+    std::cout << testLogin.generateNewPassword(false, true, 10);
 
 }
