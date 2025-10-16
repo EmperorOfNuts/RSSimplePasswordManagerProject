@@ -3,25 +3,21 @@
 #include <string>
 #include <sstream>
 #include <vector>
-#include "login.hpp"
+#include "simplePassword.hpp"
 
 // Declare everything possible that makes up the password.
 std::vector<std::string> letters = {"abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"}; 
 std::string numbers = "0123456789", symbols = "`~!@#$%^&*()_+-=.,?";
 
-login::login(std::string newPassword, std::string newWebsiteLink, std::string newUsername)
-  : password(newPassword),
-    websiteLink(newWebsiteLink),
-    username(newUsername)
+simplePassword::simplePassword(std::string newPassword)
+  : password(newPassword)
 {}
 
-login::login()
-  : password(""),
-    websiteLink(""),
-    username("")
+simplePassword::simplePassword()
+  : password("")
 {}
 
-std::string login::generateNewPassword(bool hasNumbers, bool hasSymbols, int newPasswordLength) {
+std::string simplePassword::generateNewPassword(bool hasNumbers, bool hasSymbols, int newPasswordLength) {
 
     std::string newPassword;
 
@@ -45,25 +41,15 @@ std::string login::generateNewPassword(bool hasNumbers, bool hasSymbols, int new
 
 }
 
-std::vector<std::string> login::getInformation() {
+std::vector<std::string> simplePassword::getInformation() {
     std::vector<std::string> informationVector;
-    informationVector.push_back(username);
     informationVector.push_back(password);
-    informationVector.push_back(websiteLink);
     
     return informationVector;
 
 }
 
-void login::setNewPassword(std::string newPassword) {
+void simplePassword::setNewPassword(std::string newPassword) {
     password = newPassword;
-}
-
-void login::setNewWebsiteLink(std::string newWebsiteLink) {
-    websiteLink = newWebsiteLink;
-}
-
-void login::setNewUsername(std::string newUsername) {
-    username = newUsername;
 }
 

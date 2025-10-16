@@ -12,6 +12,7 @@ class login {
         login(std::string, std::string, std::string);
         login();
         std::string generateNewPassword(bool, bool, int);
+        std::vector<std::string> getInformation();
         void setNewPassword(std::string);
         void setNewWebsiteLink(std::string);
         void setNewUsername(std::string);
